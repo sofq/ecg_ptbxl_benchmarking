@@ -186,7 +186,7 @@ def load_raw_data_icbeb(df, sampling_rate, path):
             data = [wfdb.rdsamp(path + 'records100/'+str(f)) for f in tqdm(df.index)]
             data = np.array([signal for signal, meta in data])
             #data.dump(path+'raw100.npy')
-	    np.save(path+'raw100.npy', data)
+            np.save(path+'raw100.npy', data)
     elif sampling_rate == 500:
         if os.path.exists(path + 'raw500.npy'):
             data = np.load(path+'raw500.npy', allow_pickle=True)
@@ -194,7 +194,7 @@ def load_raw_data_icbeb(df, sampling_rate, path):
             data = [wfdb.rdsamp(path + 'records500/'+str(f)) for f in tqdm(df.index)]
             data = np.array([signal for signal, meta in data])
             #data.dump(path+'raw500.npy')
-	    np.save(path+'raw500.npy', data)
+            np.save(path+'raw500.npy', data)
     return data
 
 def load_raw_data_ptbxl(df, sampling_rate, path):
@@ -205,7 +205,7 @@ def load_raw_data_ptbxl(df, sampling_rate, path):
             data = [wfdb.rdsamp(path+f) for f in tqdm(df.filename_lr)]
             data = np.array([signal for signal, meta in data])
             #data.dump(path+'raw100.npy')
-	    np.save(path+'raw100.npy', data)
+            np.save(path+'raw100.npy', data)
     elif sampling_rate == 500:
         if os.path.exists(path + 'raw500.npy'):
             data = np.load(path+'raw500.npy', allow_pickle=True)
@@ -213,7 +213,7 @@ def load_raw_data_ptbxl(df, sampling_rate, path):
             data = [wfdb.rdsamp(path+f) for f in tqdm(df.filename_hr)]
             data = np.array([signal for signal, meta in data])
             #data.dump(path+'raw500.npy')
-	    np.save(path+'raw500.npy', data)
+            np.save(path+'raw500.npy', data)
     return data
 
 def compute_label_aggregations(df, folder, ctype):
